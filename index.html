@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdullah Levin - Python Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --bg: #ffffff;
+      --bg-alt: #f9fafb;
+      --border: #e5e7eb;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--bg-alt);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg);
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .title {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 2rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+
+    .contact-info a:hover { opacity: 1; }
+
+    main { padding: 2rem; }
+
+    section { margin-bottom: 2.5rem; }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .summary { color: var(--text-light); font-size: 1rem; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-category h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background: var(--bg-alt);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      border: 1px solid var(--border);
+    }
+
+    .job {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .job-date {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .job-company {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .job-location {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .job-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .job-bullets li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .job-bullets li::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .job-stack {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .job-stack strong { color: var(--text); }
+
+    .edu-item { margin-bottom: 1rem; }
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-degree {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .edu-school {
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    .languages-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lang-name { font-weight: 500; }
+
+    .lang-level {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .certs-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-alt);
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .social-links a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      header { padding: 2rem 1rem; }
+      h1 { font-size: 2rem; }
+      main { padding: 1.5rem 1rem; }
+      .job-header { flex-direction: column; }
+    }
+
+    @media print {
+      body { background: white; }
+      .container { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Abdullah Levin</h1>
+      <p class="title">Python Developer</p>
+      <div class="contact-info">
+        <span>Al Madinah, Saudi Arabia</span>
+        <a href="tel:+966590872093">+966 59 087 2093</a>
+        <a href="mailto:warnabas@gmail.com">warnabas@gmail.com</a>
+        <a href="https://linkedin.com/in/abdullahlevin" target="_blank">LinkedIn</a>
+        <a href="https://github.com/A-Levin" target="_blank">GitHub</a>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Summary</h2>
+        <p class="summary">
+          Passionate Python Developer with 4+ years of experience building scalable backend solutions.
+          Expert in Django/DRF, DevOps practices, and cloud infrastructure. Proven track record of
+          delivering high-quality APIs, optimizing database performance, and leading end-to-end project
+          development. Multilingual professional fluent in English, Arabic, and Russian.
+        </p>
+      </section>
+
+      <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skill-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">DRF</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">asyncio</span>
+              <span class="tag">aiohttp</span>
+              <span class="tag">aiogram</span>
+              <span class="tag">Celery</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Databases</h3>
+            <div class="skill-tags">
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">ElasticSearch</span>
+              <span class="tag">Redis</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>DevOps</h3>
+            <div class="skill-tags">
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Helm</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Nginx</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Other</h3>
+            <div class="skill-tags">
+              <span class="tag">Go</span>
+              <span class="tag">Git</span>
+              <span class="tag">Sentry</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Unit Testing</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Python/Django Back-end Developer</div>
+            <div class="job-date">Mar 2021 - Present</div>
+          </div>
+          <div class="job-company">Charity Foundation "Nadezhda"</div>
+          <div class="job-location">Makhachkala, Russia</div>
+          <ul class="job-bullets">
+            <li>Developed and maintained Django/DRF backend with comprehensive unit tests</li>
+            <li>Optimized Django ORM queries, significantly improving application performance</li>
+            <li>Built custom admin panel and rules-based access system</li>
+            <li>Implemented stage preview system for testing deployments</li>
+            <li>Migrated data models from 1C, SQL, CSV, XLSX to Django</li>
+            <li>Integrated external services: amoCRM, DaData, and others</li>
+            <li>DevOps responsibilities: AWS, Docker, Nginx configuration</li>
+            <li>Developed Telegram bots using aiogram/aiohttp</li>
+          </ul>
+          <p class="job-stack"><strong>Stack:</strong> Django, Python, Go, aiohttp, aiogram, PostgreSQL</p>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Python Developer</div>
+            <div class="job-date">Jun 2022 - Nov 2022</div>
+          </div>
+          <div class="job-company">Forest VPN</div>
+          <div class="job-location">Dubai, UAE</div>
+          <ul class="job-bullets">
+            <li>Led development of white-label VPN solution with end-to-end delivery</li>
+            <li>Published project as PyPI package for easy developer integration</li>
+            <li>Implemented containerization with Docker and Kubernetes orchestration</li>
+            <li>Utilized Helm for Kubernetes resource management</li>
+            <li>Developed secure RESTful APIs using Django</li>
+            <li>Applied specification-first approach ensuring maintainable, documented code</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Python Developer</div>
+            <div class="job-date">May 2020 - Mar 2021</div>
+          </div>
+          <div class="job-company">Tooba</div>
+          <div class="job-location">London, UK</div>
+          <ul class="job-bullets">
+            <li>Built likes system, gamification (badges), and social features (comments)</li>
+            <li>Implemented push notifications center with comprehensive logging</li>
+            <li>Conducted code reviews and functional testing of team merge requests</li>
+            <li>Participated in agile sprints using Trello</li>
+          </ul>
+          <p class="job-stack"><strong>Stack:</strong> Python, DRF, Firebase, Celery, Docker, AWS, K8s, PostgreSQL</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu-item">
+          <div class="edu-degree">Bachelor in Information Technology and Computer Programming</div>
+          <div class="edu-school">Nizhnevartovsk State University</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">English Language Course (Intensive)</div>
+          <div class="edu-school">Metropolitan College, Toronto</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <div class="languages-grid">
+          <div class="lang-item">
+            <span class="lang-name">Russian</span>
+            <span class="lang-level">- Native</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">English</span>
+            <span class="lang-level">- Full Professional</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Arabic</span>
+            <span class="lang-level">- Full Professional</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">German</span>
+            <span class="lang-level">- Elementary</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Turkish</span>
+            <span class="lang-level">- Elementary</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Certifications</h2>
+        <div class="certs-list">
+          <span class="tag">Python Data Structures</span>
+          <span class="tag">Using Python to Access Web Data</span>
+          <span class="tag">Python: основы и применение</span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="social-links">
+        <a href="https://github.com/A-Levin" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/abdullahlevin" target="_blank">LinkedIn</a>
+        <a href="https://t.me/ibn_petr" target="_blank">Telegram</a>
+      </div>
+      <p>Available for remote work and relocation opportunities</p>
+    </footer>
+  </div>
+</body>
+</html>
