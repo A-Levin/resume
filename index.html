@@ -115,6 +115,29 @@
       border: 1px solid var(--border);
     }
 
+    .badges-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .badge-category h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .badge-row img {
+      height: 28px;
+    }
+
     .job {
       margin-bottom: 2rem;
       padding-bottom: 2rem;
@@ -285,48 +308,45 @@
 
       <section>
         <h2>Technical Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Backend</h3>
-            <div class="skill-tags">
-              <span class="tag">Python</span>
-              <span class="tag">Django</span>
-              <span class="tag">DRF</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">asyncio</span>
-              <span class="tag">aiohttp</span>
-              <span class="tag">aiogram</span>
-              <span class="tag">Celery</span>
+        <div class="badges-section">
+          <div class="badge-category">
+            <h3>Backend & Frameworks</h3>
+            <div class="badge-row">
+              <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+              <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django">
+              <img src="https://img.shields.io/badge/DRF-A30000?style=for-the-badge&logo=django&logoColor=white" alt="DRF">
+              <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+              <img src="https://img.shields.io/badge/Aiogram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Aiogram">
+              <img src="https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white" alt="Celery">
             </div>
           </div>
-          <div class="skill-category">
+          <div class="badge-category">
             <h3>Databases</h3>
-            <div class="skill-tags">
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">ElasticSearch</span>
-              <span class="tag">Redis</span>
+            <div class="badge-row">
+              <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+              <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis">
+              <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+              <img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" alt="Elasticsearch">
             </div>
           </div>
-          <div class="skill-category">
-            <h3>DevOps</h3>
-            <div class="skill-tags">
-              <span class="tag">Docker</span>
-              <span class="tag">Kubernetes</span>
-              <span class="tag">Helm</span>
-              <span class="tag">AWS</span>
-              <span class="tag">Nginx</span>
-              <span class="tag">CI/CD</span>
+          <div class="badge-category">
+            <h3>DevOps & Tools</h3>
+            <div class="badge-row">
+              <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+              <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes">
+              <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions">
+              <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+              <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
+              <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx">
             </div>
           </div>
-          <div class="skill-category">
+          <div class="badge-category">
             <h3>Other</h3>
-            <div class="skill-tags">
-              <span class="tag">Go</span>
-              <span class="tag">Git</span>
-              <span class="tag">OpenCV</span>
-              <span class="tag">Sentry</span>
-              <span class="tag">REST API</span>
-              <span class="tag">Unit Testing</span>
+            <div class="badge-row">
+              <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go">
+              <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV">
+              <img src="https://img.shields.io/badge/Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white" alt="Neovim">
+              <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
             </div>
           </div>
         </div>
