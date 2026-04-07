@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AbduLlah Levin - Python Developer</title>
+  <title>Abdullah Levin - Senior Python/Django Backend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
       --primary: #2563eb;
       --primary-dark: #1d4ed8;
@@ -19,453 +18,211 @@
       --bg-alt: #f9fafb;
       --border: #e5e7eb;
     }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-      background: var(--bg-alt);
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--bg);
-      min-height: 100vh;
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .title {
-      font-size: 1.25rem;
-      opacity: 0.9;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem 2rem;
-      font-size: 0.9rem;
-    }
-
-    .contact-info a {
-      color: white;
-      text-decoration: none;
-      opacity: 0.9;
-      transition: opacity 0.2s;
-    }
-
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); line-height: 1.6; background: var(--bg-alt); }
+    .container { max-width: 900px; margin: 0 auto; background: var(--bg); min-height: 100vh; }
+    header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 3rem 2rem; text-align: center; }
+    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .title { font-size: 1.25rem; opacity: 0.9; margin-bottom: 1.5rem; }
+    .contact-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; font-size: 0.9rem; }
+    .contact-info a { color: white; text-decoration: none; opacity: 0.9; transition: opacity 0.2s; }
     .contact-info a:hover { opacity: 1; }
-
     main { padding: 2rem; }
-
     section { margin-bottom: 2.5rem; }
-
-    h2 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--primary);
-      margin-bottom: 1.5rem;
-    }
-
+    h2 { font-size: 1.1rem; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary); margin-bottom: 1.5rem; }
     .summary { color: var(--text-light); font-size: 1rem; }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .skill-category h3 {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .tag {
-      background: var(--bg-alt);
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.8rem;
-      color: var(--text-light);
-      border: 1px solid var(--border);
-    }
-
-    .badges-section {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .badge-category h3 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.75rem;
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .badge-row img {
-      height: 28px;
-    }
-
-    .job {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
+    .badges-section { display: flex; flex-direction: column; gap: 1.5rem; }
+    .badge-category h3 { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .badge-row img { height: 28px; }
+    .job { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
     .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .job-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .job-date {
-      font-size: 0.85rem;
-      color: var(--text-light);
-    }
-
-    .job-company {
-      color: var(--primary);
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .job-location {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      margin-bottom: 1rem;
-    }
-
-    .job-bullets {
-      list-style: none;
-      padding: 0;
-    }
-
-    .job-bullets li {
-      position: relative;
-      padding-left: 1.25rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text-light);
-    }
-
-    .job-bullets li::before {
-      content: ">";
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .job-stack {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      color: var(--text-light);
-    }
-
+    .job-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+    .job-title { font-size: 1.1rem; font-weight: 600; color: var(--text); }
+    .job-date { font-size: 0.85rem; color: var(--text-light); }
+    .job-company { color: var(--primary); font-weight: 500; margin-bottom: 0.25rem; }
+    .job-location { font-size: 0.85rem; color: var(--text-light); margin-bottom: 1rem; }
+    .job-bullets { list-style: none; padding: 0; }
+    .job-bullets li { position: relative; padding-left: 1.25rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-light); }
+    .job-bullets li::before { content: ">"; position: absolute; left: 0; color: var(--primary); font-weight: 600; }
+    .job-stack { margin-top: 1rem; font-size: 0.8rem; color: var(--text-light); }
     .job-stack strong { color: var(--text); }
-
+    .project { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .project-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
+    .project-desc { font-size: 0.85rem; color: var(--primary); margin-bottom: 0.5rem; }
     .edu-item { margin-bottom: 1rem; }
     .edu-item:last-child { margin-bottom: 0; }
-
-    .edu-degree {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .edu-school {
-      color: var(--primary);
-      font-size: 0.9rem;
-    }
-
-    .languages-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .lang-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
+    .edu-degree { font-weight: 600; color: var(--text); }
+    .edu-school { color: var(--primary); font-size: 0.9rem; }
+    .languages-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    .lang-item { display: flex; align-items: center; gap: 0.5rem; }
     .lang-name { font-weight: 500; }
-
-    .lang-level {
-      font-size: 0.85rem;
-      color: var(--text-light);
-    }
-
-    .certs-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: var(--bg-alt);
-      color: var(--text-light);
-      font-size: 0.85rem;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .social-links a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
+    .lang-level { font-size: 0.85rem; color: var(--text-light); }
+    .tag { background: var(--bg-alt); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.8rem; color: var(--text-light); border: 1px solid var(--border); }
+    footer { text-align: center; padding: 2rem; background: var(--bg-alt); color: var(--text-light); font-size: 0.85rem; }
+    .social-links { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+    .social-links a { color: var(--primary); text-decoration: none; font-weight: 500; }
     .social-links a:hover { text-decoration: underline; }
-
-    @media (max-width: 600px) {
-      header { padding: 2rem 1rem; }
-      h1 { font-size: 2rem; }
-      main { padding: 1.5rem 1rem; }
-      .job-header { flex-direction: column; }
-    }
-
-    @media print {
-      body { background: white; }
-      .container { box-shadow: none; }
-    }
+    @media (max-width: 600px) { header { padding: 2rem 1rem; } h1 { font-size: 2rem; } main { padding: 1.5rem 1rem; } .job-header { flex-direction: column; } }
+    @media print { body { background: white; } .container { box-shadow: none; } }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>AbduLlah Levin</h1>
-      <p class="title">Python Developer</p>
+      <h1>Abdullah Levin</h1>
+      <p class="title">Senior Python/Django Backend Developer | 6 years experience</p>
       <div class="contact-info">
-        <span>Al Madinah, Saudi Arabia</span>
-        <a href="tel:+966590872093">+966 59 087 2093</a>
+        <span>Medina, Saudi Arabia · UTC+3</span>
         <a href="mailto:abdullahlevin@gmail.com">abdullahlevin@gmail.com</a>
         <a href="https://linkedin.com/in/abdullahlevin" target="_blank">LinkedIn</a>
         <a href="https://github.com/A-Levin" target="_blank">GitHub</a>
+        <a href="https://t.me/ibn_petr" target="_blank">Telegram</a>
       </div>
     </header>
 
     <main>
       <section>
-        <h2>Summary</h2>
+        <h2>About</h2>
         <p class="summary">
-          Passionate Python Developer with 5+ years of experience building scalable backend solutions.
-          Expert in Django/DRF, DevOps practices, and cloud infrastructure. Proven track record of
-          delivering high-quality APIs, optimizing database performance, and leading end-to-end project
-          development. Multilingual professional fluent in English, Arabic, and Russian.
+          Led backend development of a charity platform handling real donations and payments — full cycle from architecture to AWS deployment.
+          Migrated legacy 1C to Django, built CI/CD pipelines, preview environments per PR, and production monitoring with Grafana/Prometheus.
+          T-shape engineer: comfortable with infrastructure, data-driven decisions via Metabase, and cross-functional collaboration.
+          Worked both solo (owning the full stack) and leading a team of up to 3 developers.
         </p>
       </section>
 
       <section>
-        <h2>Technical Skills</h2>
+        <h2>Skills</h2>
         <div class="badges-section">
           <div class="badge-category">
-            <h3>Backend & Frameworks</h3>
+            <h3>Languages &amp; Frameworks</h3>
             <div class="badge-row">
               <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
               <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django">
               <img src="https://img.shields.io/badge/DRF-A30000?style=for-the-badge&logo=django&logoColor=white" alt="DRF">
               <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
-              <img src="https://img.shields.io/badge/Aiogram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Aiogram">
+              <img src="https://img.shields.io/badge/AIOHTTP-2C5BB4?style=for-the-badge&logo=aiohttp&logoColor=white" alt="AIOHTTP">
               <img src="https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white" alt="Celery">
+              <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go">
             </div>
           </div>
           <div class="badge-category">
-            <h3>Databases</h3>
+            <h3>Databases &amp; Caching</h3>
             <div class="badge-row">
               <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
               <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis">
-              <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
               <img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" alt="Elasticsearch">
             </div>
           </div>
           <div class="badge-category">
-            <h3>DevOps & Tools</h3>
+            <h3>DevOps &amp; Infrastructure</h3>
             <div class="badge-row">
               <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-              <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes">
-              <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions">
-              <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
               <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
               <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx">
+              <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions">
+              <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
             </div>
           </div>
           <div class="badge-category">
-            <h3>Other</h3>
+            <h3>Monitoring &amp; Analytics</h3>
             <div class="badge-row">
-              <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go">
-              <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV">
-              <img src="https://img.shields.io/badge/Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white" alt="Neovim">
-              <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+              <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Grafana">
+              <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" alt="Prometheus">
+              <img src="https://img.shields.io/badge/Sentry-362D59?style=for-the-badge&logo=sentry&logoColor=white" alt="Sentry">
+              <img src="https://img.shields.io/badge/Metabase-509EE3?style=for-the-badge&logo=metabase&logoColor=white" alt="Metabase">
             </div>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>Professional Experience</h2>
+        <h2>Experience</h2>
 
         <div class="job">
           <div class="job-header">
-            <div class="job-title">Python/Django Back-end Developer</div>
-            <div class="job-date">Mar 2021 - Present (4y 10m)</div>
+            <div class="job-title">Backend Developer (Lead)</div>
+            <div class="job-date">Mar 2021 – Present (5 yrs)</div>
           </div>
-          <div class="job-company">Charity Foundation "Nadezhda"</div>
-          <div class="job-location">Makhachkala, Russia</div>
+          <div class="job-company"><a href="https://dobrofon.org" target="_blank">Dobrofon</a></div>
+          <div class="job-location">Russia · Remote</div>
           <ul class="job-bullets">
-            <li>Developed and maintained Django/DRF backend with comprehensive unit tests</li>
-            <li>Optimized Django ORM queries, significantly improving application performance</li>
-            <li>Built custom admin panel and rules-based access system</li>
-            <li>Implemented stage preview system for testing deployments</li>
-            <li>Migrated data models from 1C, SQL, CSV, XLSX to Django</li>
-            <li>Integrated external services: amoCRM, DaData, and others</li>
-            <li>DevOps responsibilities: AWS, Docker, Nginx configuration</li>
-            <li>Developed Telegram bots using aiogram/aiohttp</li>
+            <li>Migrated legacy 1C accounting system to Django using raw SQL migrations — eliminated 80% of manual data entry, reduced sync errors by 95%</li>
+            <li>Reduced API response times by 37% through PostgreSQL query optimization, advisory locks, and indexing (540ms → 340ms avg latency)</li>
+            <li>Cut CI pipeline runtime from 10 min to 2 min (80% faster) by splitting tests into unit/integration layers</li>
+            <li>Built isolated preview environments per PR with hot reload and wildcard SSL — reduced QA feedback loop from days to hours</li>
+            <li>Implemented Elasticsearch-based search replacing raw SQL — decreased search latency from 2.1s to 190ms</li>
+            <li>Set up Grafana/Prometheus monitoring and Sentry error tracking; business analytics via Metabase</li>
           </ul>
-          <p class="job-stack"><strong>Stack:</strong> Django, Python, Go, aiohttp, aiogram, PostgreSQL</p>
+          <p class="job-stack"><strong>Stack:</strong> Django, DRF, FastAPI, AIOHTTP, Celery, PostgreSQL, Redis, Elasticsearch, Docker, AWS (EC2/S3/RDS), Nginx, GitHub Actions, Grafana, Prometheus, Sentry, Golang</p>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Senior Backend Developer</div>
+            <div class="job-date">Jun 2022 – Nov 2022 (6 mo)</div>
+          </div>
+          <div class="job-company"><a href="https://forestvpn.com" target="_blank">ForestVPN</a></div>
+          <div class="job-location">Dubai, UAE · Remote</div>
+          <ul class="job-bullets">
+            <li>Built backend infrastructure for VPN service handling 50K+ concurrent connections with token-based auth</li>
+            <li>Optimized database queries reducing average response time by 28% under peak traffic loads</li>
+          </ul>
+          <p class="job-stack"><strong>Stack:</strong> Python, Django, PostgreSQL, Linux</p>
         </div>
 
         <div class="job">
           <div class="job-header">
             <div class="job-title">Python Developer</div>
-            <div class="job-date">Jun 2022 - Nov 2022 (6m)</div>
+            <div class="job-date">May 2020 – Jul 2021 (1 yr 3 mo)</div>
           </div>
-          <div class="job-company">Forest VPN</div>
-          <div class="job-location">Dubai, UAE</div>
+          <div class="job-company"><a href="https://tooba.com" target="_blank">Tooba</a></div>
+          <div class="job-location">London, UK · Remote</div>
           <ul class="job-bullets">
-            <li>Led development of white-label VPN solution with end-to-end delivery</li>
-            <li>Published project as PyPI package for easy developer integration</li>
-            <li>Implemented containerization with Docker and Kubernetes orchestration</li>
-            <li>Utilized Helm for Kubernetes resource management</li>
-            <li>Developed secure RESTful APIs using Django</li>
-            <li>Applied specification-first approach ensuring maintainable, documented code</li>
+            <li>Implemented gamification engine (badges, achievements, leaderboards) — increased daily active users by 23%</li>
+            <li>Built push notification system with Celery processing 10K+ notifications daily with 99.2% delivery rate</li>
+            <li>Developed social features (comments, likes, interactions) serving 5K+ monthly active users</li>
           </ul>
-          <p class="job-stack"><strong>Stack:</strong> Python, Django, Docker, Kubernetes, Helm, PostgreSQL</p>
+          <p class="job-stack"><strong>Stack:</strong> Python, Django, DRF, Celery, AWS, Docker, PostgreSQL</p>
         </div>
+      </section>
 
-        <div class="job">
-          <div class="job-header">
-            <div class="job-title">Python Developer</div>
-            <div class="job-date">May 2020 - Mar 2021 (11m)</div>
-          </div>
-          <div class="job-company">Tooba</div>
-          <div class="job-location">London, UK</div>
+      <section>
+        <h2>Projects</h2>
+        <div class="project">
+          <div class="project-title">Taahud — Quran Memorization Tracker</div>
           <ul class="job-bullets">
-            <li>Built likes system, gamification (badges), and social features (comments)</li>
-            <li>Implemented push notifications center with comprehensive logging</li>
-            <li>Conducted code reviews and functional testing of team merge requests</li>
-            <li>Participated in agile sprints using Trello</li>
+            <li>Built a spaced repetition system for Quran memorization with FastAPI backend, PostgreSQL, and Telegram Web App</li>
           </ul>
-          <p class="job-stack"><strong>Stack:</strong> Python, DRF, Firebase, Celery, Docker, AWS, K8s, PostgreSQL</p>
+        </div>
+        <div class="project">
+          <div class="project-title">Hijri Date API — Islamic Calendar REST API &nbsp;<a href="https://github.com/A-Levin/saudi-hijri-api" target="_blank" style="font-size:0.8rem;color:var(--primary)">GitHub</a></div>
+          <ul class="job-bullets">
+            <li>Developed a public API for Hijri calendar date conversion and lookup with timezone support</li>
+          </ul>
         </div>
       </section>
 
       <section>
         <h2>Education</h2>
         <div class="edu-item">
-          <div class="edu-degree">B.A. in Arabic Language and Literature (2020 - Present)</div>
-          <div class="edu-school">Taibah University, Madinah, Saudi Arabia</div>
+          <div class="edu-degree">Arabic Language and Islamic Studies (2020 – 2026)</div>
+          <div class="edu-school">Tayyiba University, Medina, Saudi Arabia</div>
         </div>
         <div class="edu-item">
-          <div class="edu-degree">Ijazah (Hafs) (2016 - 2017)</div>
-          <div class="edu-school">Shaykh Ahmad Ash-Sharqawy, Cairo, Egypt</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-degree">Quranic Studies (2014 - 2015)</div>
-          <div class="edu-school">Haramain Centre, Cairo, Egypt</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-degree">English Language Course - Intensive (2009)</div>
-          <div class="edu-school">Metropolitan College, Toronto, Canada</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-degree">B.S. in Information Technology and Computer Programming (2005 - 2010)</div>
-          <div class="edu-school">Nizhnevartovsk State University, Nizhnevartovsk, Russia</div>
+          <div class="edu-degree">Bachelor's Degree, Natural and Exact Sciences (2005 – 2010)</div>
+          <div class="edu-school">Nizhnevartovsk State University, Russia</div>
         </div>
       </section>
 
       <section>
         <h2>Languages</h2>
         <div class="languages-grid">
-          <div class="lang-item">
-            <span class="lang-name">Russian</span>
-            <span class="lang-level">- Native</span>
-          </div>
-          <div class="lang-item">
-            <span class="lang-name">English</span>
-            <span class="lang-level">- Full Professional</span>
-          </div>
-          <div class="lang-item">
-            <span class="lang-name">Arabic</span>
-            <span class="lang-level">- Full Professional</span>
-          </div>
-          <div class="lang-item">
-            <span class="lang-name">German</span>
-            <span class="lang-level">- Elementary</span>
-          </div>
-          <div class="lang-item">
-            <span class="lang-name">Turkish</span>
-            <span class="lang-level">- Elementary</span>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Certifications</h2>
-        <div class="certs-list">
-          <span class="tag">Python Data Structures</span>
-          <span class="tag">Using Python to Access Web Data</span>
-          <span class="tag">Python: основы и применение</span>
+          <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">— Fluent</span></div>
+          <div class="lang-item"><span class="lang-name">Russian</span><span class="lang-level">— Native</span></div>
+          <div class="lang-item"><span class="lang-name">Arabic</span><span class="lang-level">— Fluent</span></div>
+          <div class="lang-item"><span class="lang-name">Turkish</span><span class="lang-level">— Basics</span></div>
         </div>
       </section>
     </main>
@@ -476,7 +233,7 @@
         <a href="https://linkedin.com/in/abdullahlevin" target="_blank">LinkedIn</a>
         <a href="https://t.me/ibn_petr" target="_blank">Telegram</a>
       </div>
-      <p>Available for remote work and relocation opportunities</p>
+      <p>Available for remote work · UTC+3 (EMEA)</p>
     </footer>
   </div>
 </body>
