@@ -217,9 +217,22 @@
       <section>
         <h2>Projects</h2>
         <div class="project">
-          <div class="project-title">Taahud — Quran Memorization Tracker</div>
+          <div class="project-title">AI Transcription Pipeline — Self-hosted ASR Service</div>
           <ul class="job-bullets">
-            <li>Built a spaced repetition system for Quran memorization with FastAPI backend, PostgreSQL, and Telegram Web App</li>
+            <li>Faster-Whisper wrapped in FastAPI, Dockerized, exposing a <code>/transcribe</code> REST endpoint with language detection and word/duration metadata</li>
+            <li>Built on top: Telegram transcription bot (voice/audio/video → text), local voice-typing tool with global hotkeys, and a CLI</li>
+          </ul>
+        </div>
+        <div class="project">
+          <div class="project-title">LLM-Integrated Telegram Assistants — Anthropic Claude API</div>
+          <ul class="job-bullets">
+            <li>Telegram bots integrating the Claude API and Claude Code for command execution, Q&amp;A and automation — prompt engineering, async handlers, search and persistence (Elasticsearch/PostgreSQL/Redis)</li>
+          </ul>
+        </div>
+        <div class="project">
+          <div class="project-title">Taahud — Quran Memorization Service &nbsp;<a href="https://taahud.app" target="_blank" style="font-size:0.8rem;color:var(--primary)">taahud.app</a></div>
+          <ul class="job-bullets">
+            <li>Spaced repetition system with async FastAPI / SQLAlchemy backend and a React 18 + Tailwind frontend delivered as a Telegram Web App; plus I'rab al-Quran, a React app for Quranic morphological analysis</li>
           </ul>
         </div>
         <div class="project">
